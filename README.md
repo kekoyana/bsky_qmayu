@@ -1,1 +1,3 @@
 bluesky の ユウきゅんBot
+
+環境変数のBSKYB_QMAYU_PASSWORDにAPIパスワードいれてつかってね

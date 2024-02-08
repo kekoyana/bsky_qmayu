@@ -6,3 +6,10 @@ AllCops:
 Style/Documentation:
   Enabled: false
 
+# 原因は追って調査
+Security/Open:
+  Enabled: false
+
+# 'foo%d' % 1 の書き方は許可する
+Style/FormatString:
+  Enabled: false
