@@ -17,5 +17,4 @@ end
 ranking = FetchRanking.new.fetch_by(name: 'ユウ')
 message = tweet_message(ranking:)
 
-puts message
-# TweetClient.new.post(message)
+TweetClient.new.post(message)
