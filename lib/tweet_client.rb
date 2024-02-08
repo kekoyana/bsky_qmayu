@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'bskyrb'
 
 class TweetClient
   USERNAME = 'qmayu.bsky.social'
-  PASSWORD = ENV['BSKYB_QMAYU_PASSWORD']
+  PASSWORD = ENV.fetch('BSKYB_QMAYU_PASSWORD', nil)
   PDS_URL = 'https://bsky.social'
 
   def post(message)
@@ -11,6 +13,8 @@ class TweetClient
     credentials = Bskyrb::Credentials.new(USERNAME, PASSWORD)
     session = Bskyrb::Session.new(credentials, PDS_URL)
     bsky = Bskyrb::RecordManager.new(session)
+
+    puts "Tweet:#{message}"
     bsky.create_post(message)
   end
 end

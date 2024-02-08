@@ -1,0 +1,8 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.3
+
+# ドキュメントの無いクラスを許容する。
+Style/Documentation:
+  Enabled: false
+
