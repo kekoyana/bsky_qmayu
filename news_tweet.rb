@@ -21,7 +21,7 @@ articles = fetcher.articles_from_last_id(recent_id)
 # articles.each { puts _1 }
 
 articles.reverse.each do |article|
-  message = NEWS_TEMPLATE % { title: article.title, url: article.url }
+  message = format(NEWS_TEMPLATE, title: article.title, url: article.url)
   message.strip!
   TweetClient.new.post(message)
 end
