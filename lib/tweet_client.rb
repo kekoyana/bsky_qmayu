@@ -15,6 +15,6 @@ class TweetClient
     bsky = Bskyrb::RecordManager.new(session)
 
     puts "Tweet:#{message}"
-    bsky.create_post(message)
+    bsky.create_post(message) unless DEBUG_MODE
   end
 end
