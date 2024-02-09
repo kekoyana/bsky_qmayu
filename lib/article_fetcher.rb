@@ -40,6 +40,6 @@ class ArticleFetcher
   end
 
   def fetch_doc
-    URI.open(NEWS_URL).read
+    URI.parse(NEWS_URL).read
   end
 end

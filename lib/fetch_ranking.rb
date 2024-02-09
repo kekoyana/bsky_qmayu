@@ -18,7 +18,7 @@ class FetchRanking
   end
 
   def fetch_doc(name:)
-    html = URI.open(RANKING_URL).read
+    html = URI.parse(RANKING_URL).read
     doc = Nokogiri::HTML(html, RANKING_URL)
 
     doc.css('ul.ranking_s').find do |ul|
