@@ -8,13 +8,25 @@ class ArticleFetcher
   SAMPLE_FILE = './sample.html'
   NEWS_URL = Article::NEWS_URL
 
+  def articles
+    @articles ||= fetch_articles
+  end
+
+  def last_id
+    articles.max_by(&:id).id
+  end
+
+  def articles_from_last_id(arg_id)
+    articles.filter { _1.id > arg_id }
+  end
+
+  private
+
   def fetch_articles
     fetch_elements.map do |element|
       Article.convert_by_element(element:)
     end
   end
-
-  private
 
   def fetch_elements
     html = DEBUG_MODE ? file_doc : fetch_doc

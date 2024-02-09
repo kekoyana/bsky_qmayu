@@ -2,13 +2,7 @@
 
 require_relative 'lib/tweet_client'
 
-nowtime = Time.now
-
-# 稼働時間は9時から21時まで
-unless (9..22).include?(nowtime.hour)
-  puts '寝ているから送信しないよ'
-  exit
-end
+DEBUG_MODE = false
 
 tweets = [
   '後ろの人なんていないよ',
@@ -50,7 +44,7 @@ tweets = [
 
 message = tweets.sample
 
-# 3/3は誕生日ツイート
-message = 'ボク、誕生日…だよ……' if nowtime.strftime('%m%d') == '0303'
+# 3/3は誕生日ツイートで上書き
+message = 'ボク、誕生日…だよ……' if Time.now.strftime('%m%d') == '0303' && rand < 0.6
 
 TweetClient.new.post(message)
