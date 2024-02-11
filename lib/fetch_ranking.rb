@@ -9,6 +9,8 @@ class FetchRanking
   def fetch_by(name:)
     raise 'invalid name' unless %w[ユウ アロエ].include?(name)
 
+    return rand(1..22) if DEBUG_MODE
+
     doc = fetch_doc(name:)
     raise 'Ranking not found.' if doc.nil?
 
@@ -16,6 +18,8 @@ class FetchRanking
       raise 'Ranking zero.' if ranking.zero?
     end
   end
+
+  private
 
   def fetch_doc(name:)
     html = URI.parse(RANKING_URL).read
