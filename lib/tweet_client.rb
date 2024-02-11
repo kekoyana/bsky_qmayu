@@ -3,8 +3,8 @@
 require 'bskyrb'
 
 class TweetClient
-  USERNAME = 'qmayu.bsky.social'
-  PASSWORD = ENV.fetch('BSKYB_QMAYU_PASSWORD', nil)
+  USERNAME = 'qmaaloe.bsky.social'
+  PASSWORD = ENV.fetch('BSKYB_QMAALOE_PASSWORD', nil)
   PDS_URL = 'https://bsky.social'
 
   LINK_PATTERN = %r{(https?://\S+)}
