@@ -34,11 +34,12 @@ class Article
       link = alink.attribute('href').value
       link = "http://p.eagate.573.jp#{link}" unless link.start_with?('http')
       self.url = link
+    elsif body
+      self.url ||= NEWS_URL + "##{@origin_id}"
     end
-    self.url ||= NEWS_URL + "##{@origin_id}"
   end
 
   def to_s
-    "#{@date} #{@title} #{@url}"
+    "#{@date} #{@title} #{@url}".strip
   end
 end
