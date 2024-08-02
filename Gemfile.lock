@@ -28,7 +28,8 @@ GEM
     racc (1.7.3)
     rainbow (3.1.1)
     regexp_parser (2.9.0)
-    rexml (3.2.6)
+    rexml (3.3.3)
+      strscan
     rubocop (1.60.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -43,6 +44,7 @@ GEM
     rubocop-ast (1.30.0)
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
+    strscan (3.1.0)
     unicode-display_width (2.5.0)
     xrpc (0.1.7.2)
       date
