@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Article
-  NEWS_URL = 'https://p.eagate.573.jp/game/qma/18/info/index.html'
+  NEWS_URL = 'https://p.eagate.573.jp/game/qma/19/info/index.html'
   attr_accessor :id, :origin_id, :date, :title, :body, :url
 
   def self.convert_by_element(element:)
